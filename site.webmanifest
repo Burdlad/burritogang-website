@@ -1,0 +1,12 @@
+{
+  "short_name": "Burrito Gang",
+  "name": "Burrito Gang",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "background_color": "#f3e6cf",
+  "theme_color": "#f3e6cf"
+}

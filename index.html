@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; manifest-src 'self'; connect-src https://api.mcsrvstat.us; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Burrito Gang | Minecraft server</title>
+  <meta name="description" content="Burrito Gang is a Minecraft server and the Discord that goes with it. Server address: hub.burritogang.com">
+
+  <meta property="og:title" content="Burrito Gang">
+  <meta property="og:description" content="A Minecraft server and the Discord that goes with it. Join at hub.burritogang.com">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://burritogang.com/">
+  <meta property="og:image" content="https://burritogang.com/icon.png">
+  <meta property="og:image:alt" content="A pixel art burrito wrapped in foil">
+
+  <link rel="preload" href="fonts/bowlby-one.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#f3e6cf">
+</head>
+
+<body>
+
+  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+    <symbol id="discord-mark" viewBox="0 0 24 24">
+      <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <a class="brand" href="./">
+      <img src="img/burrito.svg" alt="" width="32" height="32">
+      <span>Burrito Gang</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#join">How to join</a>
+      <a href="#rules">House rules</a>
+      <a href="https://discord.gg/u76jPFuMTk" rel="noopener noreferrer" target="_blank">Discord</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Minecraft server</p>
+        <h1>Burrito <span>Gang</span></h1>
+        <p class="lede">A Minecraft server, plus a Discord full of the people who play on it. Grab the address, hop into the hub and say hi.</p>
+        <div class="hero-actions">
+          <a class="btn btn-discord" href="https://discord.gg/u76jPFuMTk" rel="noopener noreferrer" target="_blank">
+            <svg width="24" height="24" aria-hidden="true"><use href="#discord-mark"/></svg>
+            Join the Discord
+          </a>
+          <a class="text-link" href="#join">First time? Start here</a>
+        </div>
+      </div>
+
+      <div class="ticket-wrap">
+        <img class="ticket-burrito" src="img/burrito.svg" alt="" width="128" height="128">
+        <div class="ticket">
+          <p class="ticket-head">Burrito Gang<br>Order up</p>
+          <dl class="ticket-lines">
+            <div><dt>Item</dt><dd>1 &times; Minecraft</dd></div>
+            <div><dt>Edition</dt><dd>Java</dd></div>
+            <div><dt>Table</dt><dd>The hub</dd></div>
+          </dl>
+          <p class="ticket-label" id="ip-label">Server address</p>
+          <p class="ticket-ip" id="server-ip" aria-labelledby="ip-label">hub.burritogang.com</p>
+          <button class="btn btn-copy" type="button" data-copy="hub.burritogang.com">Copy address</button>
+          <p class="ticket-status" id="server-status" hidden></p>
+          <p class="ticket-foot">Thanks, come again</p>
+        </div>
+        <p class="visually-hidden" role="status" id="copy-announce"></p>
+      </div>
+    </section>
+
+    <div class="awning" aria-hidden="true"></div>
+
+    <section class="join" id="join">
+      <h2>How to get in</h2>
+      <ol class="steps">
+        <li>
+          <div class="step-line">
+            <h3>Open Minecraft</h3>
+            <span class="leader"></span>
+            <span class="step-tag">Java Edition</span>
+          </div>
+          <p>Launch the game and pick Multiplayer from the main menu.</p>
+        </li>
+        <li>
+          <div class="step-line">
+            <h3>Add the server</h3>
+            <span class="leader"></span>
+            <span class="step-tag">hub.burritogang.com</span>
+          </div>
+          <p>Hit Add Server, name it whatever you like, and paste the address in. Then double click it to connect.</p>
+        </li>
+        <li>
+          <div class="step-line">
+            <h3>Say hi in Discord</h3>
+            <span class="leader"></span>
+            <span class="step-tag">optional, recommended</span>
+          </div>
+          <p>It's where announcements go, where you ask for help, and where most of the talking happens when nobody is in game.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="rules" id="rules">
+      <div class="rules-inner">
+        <h2>House rules</h2>
+        <p class="rules-intro">Short list. If you can behave at a restaurant you can behave here.</p>
+        <ol class="rule-list">
+          <li>
+            <h3>Be decent</h3>
+            <p>No slurs, no harassment, no going after people. Joking around is fine until someone asks you to stop.</p>
+          </li>
+          <li>
+            <h3>Play fair</h3>
+            <p>No hacked clients, x-ray, duping or abusing bugs. Found a bug? Tell staff.</p>
+          </li>
+          <li>
+            <h3>Hands off other builds</h3>
+            <p>If you didn't build it, don't break it, and don't take what isn't yours.</p>
+          </li>
+          <li>
+            <h3>Staff have the last word</h3>
+            <p>If one of them asks you to knock it off, knock it off. Disagree? Bring it up in Discord, not in chat.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="discord">
+      <div class="discord-inner">
+        <h2>Everything else happens in Discord</h2>
+        <p>Announcements, help, screenshots, arguing about pineapple. One click and you're in.</p>
+        <a class="btn btn-discord" href="https://discord.gg/u76jPFuMTk" rel="noopener noreferrer" target="_blank">
+          <svg width="24" height="24" aria-hidden="true"><use href="#discord-mark"/></svg>
+          Join the Discord
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <p class="foot-name">Burrito Gang</p>
+    <p class="foot-ip">hub.burritogang.com</p>
+    <p class="foot-legal">Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
