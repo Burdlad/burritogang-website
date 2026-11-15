@@ -57,9 +57,19 @@
   box-sizing: border-box;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: var(--paper);
+  --text: var(--ink);
+  --text-soft: var(--ink-soft);
+  --salsa-text: var(--salsa);
+  --edge: var(--ink);
+}
+
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+  scroll-padding-top: 7.5rem;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -140,17 +150,26 @@ a {
 /* ---------- top bar ---------- */
 
 .top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  border-bottom: 3px solid var(--edge);
+}
+
+.top-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 2rem;
+  justify-content: flex-end;
+  gap: 0.5rem 1.5rem;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 1.25rem var(--gutter);
+  padding: 0.85rem var(--gutter);
 }
 
 .brand {
+  margin-right: auto;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -168,6 +187,7 @@ a {
 .top nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.25rem 1.5rem;
   font-weight: 600;
   font-size: 1rem;
@@ -181,6 +201,24 @@ a {
 
 .top nav a:hover {
   border-bottom-color: var(--salsa-text);
+}
+
+.theme-toggle {
+  padding: 0.3rem 0.8rem;
+  border: 2px solid var(--edge);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--corn);
+  border-color: var(--ink);
+  color: var(--ink);
 }
 
 /* ---------- buttons ---------- */
@@ -588,7 +626,23 @@ h3 {
 
 }
 
+@media (min-width: 40.01em) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
+
 @media (max-width: 40em) {
+  .top-inner {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .top nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+
   .leader {
     display: none;
   }
@@ -620,6 +674,11 @@ h3 {
   body {
     background: #fff;
     color: #000;
+  }
+
+  .top {
+    position: static;
+    border-bottom: 0;
   }
 
   .awning,

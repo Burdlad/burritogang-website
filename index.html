@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="A pixel art burrito wrapped in foil">
 
   <link rel="preload" href="fonts/bowlby-one.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -26,7 +26,9 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#17110e">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark light">
+
+  <script src="js/theme.js"></script>
 </head>
 
 <body>
@@ -40,15 +42,18 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="top">
-    <a class="brand" href="./">
-      <img src="img/burrito.svg" alt="" width="32" height="32">
-      <span>Burrito Gang</span>
-    </a>
-    <nav aria-label="Main">
-      <a href="#join">How to join</a>
-      <a href="#vote">Vote</a>
-      <a href="https://discord.gg/fwCaUhHpgy" rel="noopener noreferrer" target="_blank">Discord</a>
-    </nav>
+    <div class="top-inner">
+      <a class="brand" href="./">
+        <img src="img/burrito.svg" alt="" width="32" height="32">
+        <span>Burrito Gang</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#join">How to join</a>
+        <a href="#vote">Vote</a>
+        <a href="https://discord.gg/fwCaUhHpgy" rel="noopener noreferrer" target="_blank">Discord</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode">Light mode</button>
+    </div>
   </header>
 
   <main id="main">
