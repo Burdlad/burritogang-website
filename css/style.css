@@ -36,6 +36,13 @@
   --lime: #b9d86a;
   --blurple: #5865f2;
 
+  /* dark theme (default): page surface and text */
+  --bg: #17110e;
+  --text: #f4e8d2;
+  --text-soft: #c9b79f;
+  --salsa-text: #ef6a55;
+  --edge: #f4e8d2;
+
   --display: "Bowlby One", Impact, "Arial Black", sans-serif;
   --body: "Karla", "Segoe UI", Helvetica, Arial, sans-serif;
   --mono: "Space Mono", Consolas, "Courier New", monospace;
@@ -51,14 +58,15 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--body);
   font-size: 1.125rem;
   line-height: 1.55;
@@ -95,7 +103,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--salsa);
+  outline: 3px solid var(--salsa-text);
   outline-offset: 3px;
 }
 
@@ -121,8 +129,8 @@ a {
   top: -4rem;
   z-index: 10;
   padding: 0.5rem 0.9rem;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .skip:focus {
@@ -172,7 +180,7 @@ a {
 }
 
 .top nav a:hover {
-  border-bottom-color: var(--salsa);
+  border-bottom-color: var(--salsa-text);
 }
 
 /* ---------- buttons ---------- */
@@ -183,9 +191,9 @@ a {
   justify-content: center;
   gap: 0.65rem;
   padding: 0.85rem 1.4rem;
-  border: 3px solid var(--ink);
+  border: 3px solid var(--edge);
   border-radius: 6px;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--edge);
   font-family: var(--body);
   font-size: 1.1rem;
   font-weight: 700;
@@ -197,12 +205,12 @@ a {
 
 .btn:hover {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--edge);
 }
 
 .btn:active {
   transform: translate(4px, 4px);
-  box-shadow: 0 0 0 var(--ink);
+  box-shadow: 0 0 0 var(--edge);
 }
 
 .btn-discord {
@@ -236,7 +244,7 @@ a {
 }
 
 .text-link:hover {
-  color: var(--salsa);
+  color: var(--salsa-text);
 }
 
 /* ---------- hero ---------- */
@@ -253,8 +261,8 @@ a {
   display: inline-block;
   margin-bottom: 1.25rem;
   padding: 0.2rem 0.6rem;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--mono);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -274,7 +282,7 @@ h1 {
 
 h1 span {
   display: block;
-  color: var(--salsa);
+  color: var(--salsa-text);
 }
 
 .lede {
@@ -299,11 +307,13 @@ h1 span {
   justify-self: center;
   width: min(100%, 21rem);
   transform: rotate(2.5deg);
-  filter: drop-shadow(7px 9px 0 rgba(36, 22, 15, 0.16));
+  filter: drop-shadow(7px 9px 0 rgba(0, 0, 0, 0.45));
 }
 
 .ticket {
   --tooth: 9px;
+  --edge: var(--ink);
+  color: var(--ink);
   padding: 1.75rem 1.5rem calc(1.5rem + var(--tooth));
   background: var(--paper-light);
   font-family: var(--mono);
@@ -429,11 +439,11 @@ h3 {
   counter-increment: step;
   position: relative;
   padding: 1.5rem 0 1.5rem 3.75rem;
-  border-top: 3px solid var(--ink);
+  border-top: 3px solid var(--edge);
 }
 
 .steps li:last-child {
-  border-bottom: 3px solid var(--ink);
+  border-bottom: 3px solid var(--edge);
 }
 
 .steps li::before {
@@ -444,7 +454,7 @@ h3 {
   font-family: var(--display);
   font-size: 2.4rem;
   line-height: 1;
-  color: var(--salsa);
+  color: var(--salsa-text);
 }
 
 .step-line {
@@ -457,7 +467,7 @@ h3 {
 .leader {
   flex: 1 1 2rem;
   min-width: 2rem;
-  border-bottom: 3px dotted var(--ink);
+  border-bottom: 3px dotted var(--edge);
   transform: translateY(-0.3em);
 }
 
@@ -469,14 +479,21 @@ h3 {
 .steps p {
   max-width: 38rem;
   margin-top: 0.5rem;
-  color: var(--ink-soft);
+  color: var(--text-soft);
 }
 
 /* ---------- vote ---------- */
 
 .vote {
+  --edge: var(--ink);
   background: var(--lime);
   border-top: 4px solid var(--ink);
+  color: var(--ink);
+}
+
+.vote .kicker {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .vote-inner {
@@ -503,8 +520,10 @@ h3 {
 /* ---------- discord ---------- */
 
 .discord {
+  --edge: var(--ink);
   background: var(--corn);
   border-bottom: 4px solid var(--ink);
+  color: var(--ink);
 }
 
 .discord-inner {
@@ -545,7 +564,7 @@ h3 {
 .foot-legal {
   max-width: 34rem;
   margin-top: 1.25rem;
-  color: var(--ink-soft);
+  color: var(--text-soft);
   font-size: 0.85rem;
 }
 
@@ -598,6 +617,11 @@ h3 {
 }
 
 @media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+
   .awning,
   .btn,
   .top nav {
