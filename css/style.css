@@ -472,6 +472,34 @@ h3 {
   color: var(--ink-soft);
 }
 
+/* ---------- vote ---------- */
+
+.vote {
+  background: var(--lime);
+  border-top: 4px solid var(--ink);
+}
+
+.vote-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 8vw, 6rem) var(--gutter);
+}
+
+.vote h2 {
+  max-width: 14ch;
+}
+
+.vote p:not(.kicker) {
+  max-width: 30rem;
+  margin: 1.25rem 0 2rem;
+  font-size: 1.2rem;
+}
+
+.btn-vote {
+  background: var(--salsa);
+  color: #fff;
+}
+
 /* ---------- discord ---------- */
 
 .discord {
@@ -576,7 +604,8 @@ h3 {
     display: none;
   }
 
-  .discord {
+  .discord,
+  .vote {
     background: none;
     color: #000;
   }
