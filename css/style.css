@@ -36,12 +36,33 @@
   --lime: #b9d86a;
   --blurple: #5865f2;
 
-  /* dark theme (default): page surface and text */
-  --bg: #17110e;
-  --text: #f4e8d2;
-  --text-soft: #c9b79f;
-  --salsa-text: #ef6a55;
-  --edge: #f4e8d2;
+  /* dark theme (default): warm espresso, matching gaymers.burritogang.com */
+  --bg: #1f1713;
+  --panel: #2b201a;
+  --card: #352820;
+  --text: #f1e4cc;
+  --text-soft: #b9a189;
+  --salsa-text: #e0533b;
+  --edge: #0f0a07;
+  --rule: #6b5240;
+  --top-bg: rgba(31, 23, 19, 0.88);
+  --sheen:
+    radial-gradient(1100px 650px at -5% -10%, rgba(214, 124, 60, 0.17), transparent 60%),
+    radial-gradient(900px 600px at 105% 0%, rgba(150, 86, 190, 0.13), transparent 60%),
+    radial-gradient(1000px 700px at 50% 115%, rgba(29, 150, 160, 0.1), transparent 60%);
+  --kicker-bg: #120c09;
+  --kicker-fg: var(--corn);
+  --ticket-bg: var(--card);
+  --ticket-ink: var(--text);
+  --ticket-soft: var(--text-soft);
+  --ticket-rule: var(--rule);
+  --ticket-edge: var(--edge);
+  --awn-a: #b83a26;
+  --awn-b: #2b201a;
+  --vote-bg: var(--panel);
+  --disc-bg: var(--panel);
+  --band-ink: var(--text);
+  --band-edge: var(--edge);
 
   --display: "Bowlby One", Impact, "Arial Black", sans-serif;
   --body: "Karla", "Segoe UI", Helvetica, Arial, sans-serif;
@@ -60,10 +81,27 @@
 :root[data-theme="light"] {
   color-scheme: light;
   --bg: var(--paper);
+  --panel: var(--paper-light);
   --text: var(--ink);
   --text-soft: var(--ink-soft);
   --salsa-text: var(--salsa);
   --edge: var(--ink);
+  --rule: var(--ink);
+  --top-bg: var(--paper);
+  --sheen: none;
+  --kicker-bg: var(--ink);
+  --kicker-fg: var(--paper);
+  --ticket-bg: var(--paper-light);
+  --ticket-ink: var(--ink);
+  --ticket-soft: var(--ink-soft);
+  --ticket-rule: var(--ink);
+  --ticket-edge: var(--ink);
+  --awn-a: var(--salsa);
+  --awn-b: var(--paper-light);
+  --vote-bg: var(--lime);
+  --disc-bg: var(--corn);
+  --band-ink: var(--ink);
+  --band-edge: var(--ink);
 }
 
 html {
@@ -75,7 +113,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--sheen);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--body);
   font-size: 1.125rem;
@@ -139,8 +179,8 @@ a {
   top: -4rem;
   z-index: 10;
   padding: 0.5rem 0.9rem;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--kicker-bg);
+  color: var(--kicker-fg);
 }
 
 .skip:focus {
@@ -153,7 +193,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 5;
-  background: var(--bg);
+  background: var(--top-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-bottom: 3px solid var(--edge);
 }
 
@@ -204,21 +246,24 @@ a {
 }
 
 .theme-toggle {
-  padding: 0.3rem 0.8rem;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
   border: 2px solid var(--edge);
-  border-radius: 6px;
-  background: transparent;
+  border-radius: 10px;
+  background: var(--panel);
   color: inherit;
-  font: inherit;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1;
   cursor: pointer;
+  transition: transform 120ms ease-out;
 }
 
 .theme-toggle:hover {
-  background: var(--corn);
-  border-color: var(--ink);
-  color: var(--ink);
+  transform: rotate(-12deg);
 }
 
 /* ---------- buttons ---------- */
@@ -299,8 +344,8 @@ a {
   display: inline-block;
   margin-bottom: 1.25rem;
   padding: 0.2rem 0.6rem;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--kicker-bg);
+  color: var(--kicker-fg);
   font-family: var(--mono);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -350,10 +395,10 @@ h1 span {
 
 .ticket {
   --tooth: 9px;
-  --edge: var(--ink);
-  color: var(--ink);
+  --edge: var(--ticket-edge);
+  color: var(--ticket-ink);
   padding: 1.75rem 1.5rem calc(1.5rem + var(--tooth));
-  background: var(--paper-light);
+  background: var(--ticket-bg);
   font-family: var(--mono);
   font-size: 0.85rem;
   line-height: 1.5;
@@ -374,7 +419,7 @@ h1 span {
 
 .ticket-head {
   padding-bottom: 1rem;
-  border-bottom: 2px dashed var(--ink);
+  border-bottom: 2px dashed var(--ticket-rule);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -382,7 +427,7 @@ h1 span {
 
 .ticket-lines {
   padding: 0.9rem 0;
-  border-bottom: 2px dashed var(--ink);
+  border-bottom: 2px dashed var(--ticket-rule);
 }
 
 .ticket-lines div {
@@ -392,12 +437,12 @@ h1 span {
 }
 
 .ticket-lines dt {
-  color: var(--ink-soft);
+  color: var(--ticket-soft);
 }
 
 .ticket-label {
   margin-top: 1rem;
-  color: var(--ink-soft);
+  color: var(--ticket-soft);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -433,14 +478,14 @@ h1 span {
   --stripe: 44px;
   --scallop: 22px;
   height: 66px;
-  background: repeating-linear-gradient(90deg, var(--salsa) 0 var(--stripe), var(--paper-light) var(--stripe) calc(2 * var(--stripe)));
+  background: repeating-linear-gradient(90deg, var(--awn-a) 0 var(--stripe), var(--awn-b) var(--stripe) calc(2 * var(--stripe)));
   -webkit-mask:
     radial-gradient(var(--scallop) at 50% 0, #000 97%, #0000) 0 100% / var(--stripe) var(--scallop) repeat-x,
     linear-gradient(#000 0 0) top / 100% calc(100% - var(--scallop)) no-repeat;
   mask:
     radial-gradient(var(--scallop) at 50% 0, #000 97%, #0000) 0 100% / var(--stripe) var(--scallop) repeat-x,
     linear-gradient(#000 0 0) top / 100% calc(100% - var(--scallop)) no-repeat;
-  border-top: 4px solid var(--ink);
+  border-top: 4px solid var(--edge);
 }
 
 /* ---------- how to join ---------- */
@@ -477,11 +522,11 @@ h3 {
   counter-increment: step;
   position: relative;
   padding: 1.5rem 0 1.5rem 3.75rem;
-  border-top: 3px solid var(--edge);
+  border-top: 3px solid var(--rule);
 }
 
 .steps li:last-child {
-  border-bottom: 3px solid var(--edge);
+  border-bottom: 3px solid var(--rule);
 }
 
 .steps li::before {
@@ -505,7 +550,7 @@ h3 {
 .leader {
   flex: 1 1 2rem;
   min-width: 2rem;
-  border-bottom: 3px dotted var(--edge);
+  border-bottom: 3px dotted var(--rule);
   transform: translateY(-0.3em);
 }
 
@@ -523,15 +568,10 @@ h3 {
 /* ---------- vote ---------- */
 
 .vote {
-  --edge: var(--ink);
-  background: var(--lime);
-  border-top: 4px solid var(--ink);
-  color: var(--ink);
-}
-
-.vote .kicker {
-  background: var(--ink);
-  color: var(--paper);
+  --edge: var(--band-edge);
+  background: var(--vote-bg);
+  border-top: 4px solid var(--band-edge);
+  color: var(--band-ink);
 }
 
 .vote-inner {
@@ -558,10 +598,10 @@ h3 {
 /* ---------- discord ---------- */
 
 .discord {
-  --edge: var(--ink);
-  background: var(--corn);
-  border-bottom: 4px solid var(--ink);
-  color: var(--ink);
+  --edge: var(--band-edge);
+  background: var(--disc-bg);
+  border-bottom: 4px solid var(--band-edge);
+  color: var(--band-ink);
 }
 
 .discord-inner {
@@ -665,8 +705,13 @@ h3 {
     scroll-behavior: auto;
   }
 
-  .btn {
+  .btn,
+  .theme-toggle {
     transition: none;
+  }
+
+  .theme-toggle:hover {
+    transform: none;
   }
 }
 

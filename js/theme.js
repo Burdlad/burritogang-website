@@ -3,7 +3,7 @@
 
   // Dark is the default. A choice made with the toggle is remembered in this browser.
   var KEY = 'theme';
-  var COLORS = { dark: '#17110e', light: '#f3e6cf' };
+  var COLORS = { dark: '#1f1713', light: '#f3e6cf' };
   var root = document.documentElement;
 
   function stored() {
@@ -42,8 +42,10 @@
 
     function sync() {
       var light = root.getAttribute('data-theme') === 'light';
-      btn.textContent = light ? 'Dark mode' : 'Light mode';
-      btn.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+      var label = light ? 'Switch to dark mode' : 'Switch to light mode';
+      btn.textContent = light ? '\u2600\uFE0F' : '\uD83C\uDF19';
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
     }
 
     sync();
